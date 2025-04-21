@@ -2,9 +2,10 @@ import React from "react";
 
 type ResetPopupProps = {
   onClose: () => void;
+  onReset: () => void;
 };
 
-const ResetPopup = ({ onClose }: ResetPopupProps) => {
+const ResetPopup = ({ onReset, onClose }: ResetPopupProps) => {
   return (
     <>
       <div className="fixed inset-0 flex justify-center items-center z-50">
@@ -13,7 +14,7 @@ const ResetPopup = ({ onClose }: ResetPopupProps) => {
             Confirm Reset?
           </div>
           <div className="grid grid-cols-2 gap-2">
-            <button onClick={onClose} className="bg-red-400 rounded-xl text-2xl">Reset</button>
+            <button onClick={onReset} className="bg-red-400 rounded-xl text-2xl">Reset</button>
             <button onClick={onClose} className="bg-gray-400 rounded-xl text-2xl">Cancel</button>
           </div>
         </div>

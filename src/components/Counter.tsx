@@ -55,12 +55,16 @@ export default function Counter() {
 
   const handleClose = () => {
     setResetPopup(false);
+  }
+
+  const handleReset = () => {
     reset();
+    setResetPopup(false);
   }
 
   return (
     <>
-      {resetPopup ? <ResetPopup onClose={handleClose}/> : null}
+      {resetPopup ? <ResetPopup onReset={handleReset} onClose={handleClose}/> : null}
       <div
         className={`grid md:grid-rows-[1fr_1.5fr] grid-rows-[auto_auto] p-6 md:p-30 text-center place-items-center text-2xl gap-10 md:gap-0 md:text-4xl ${bgColor}`}
       >
